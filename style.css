@@ -17,7 +17,7 @@ body {
   list-style: none;
 }
 main {
-  width: min(1400px, 100vw);
+  inline-size: min(1400px, 100vw);
   margin: auto;
   padding: 20px;
 }
@@ -28,7 +28,7 @@ header {
   flex-wrap: wrap;
 }
 header img {
-  height: 40px;
+  block-size: 40px;
 }
 .banner .content {
   font-family: "Odibee Sans", sans-serif;
@@ -41,7 +41,7 @@ header img {
   font-size: 17em;
 }
 .banner .content .right {
-  text-align: right;
+  text-align: end;
   transform: translateY(-30px);
 }
 .banner .content .right h2 {
@@ -50,29 +50,29 @@ header img {
 }
 
 .banner .image {
-  width: 100%;
-  height: 600px;
-  background-image: url(/images/p-1.jpg);
+  inline-size: 100%;
+  block-size: 600px;
+  background-image: url(images/p-1.jpg);
   position: relative;
 }
 
 .banner .image img {
   position: absolute;
-  height: 160%;
-  left: 50%;
+  block-size: 160%;
+  inset-inline-start: 50%;
   transform: translateX(-50%);
-  bottom: 0px;
+  inset-block-end: 0px;
 }
 
 .grid figure img {
-  width: 100%;
+  inline-size: 100%;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(var(--row), 100px);
-  margin-top: 50px;
+  margin-block-start: 50px;
   gap: 50px;
 }
 .grid-1 figure:nth-child(1) {
@@ -122,7 +122,7 @@ header img {
   text-wrap: nowrap;
 }
 .grid-3 div:nth-child(even) {
-  text-align: right;
+  text-align: end;
 }
 .grid-3 div:nth-child(5) {
   grid-column: 1/ 6;
@@ -131,11 +131,11 @@ header img {
   grid-column: 1/ 7;
 }
 footer {
-  border-top: 1px solid #2e373a55;
-  min-height: 100vh;
+  border-block-start: 1px solid #2e373a55;
+  min-block-size: 100vh;
 }
 footer .content {
-  width: min(1400px, 100vw);
+  inline-size: min(1400px, 100vw);
   margin: auto;
   padding: 100px 20px;
 }
@@ -162,7 +162,7 @@ footer .content {
 
 @media screen and (max-width: 1023px) {
   header img {
-    height: 2em;
+    block-size: 2em;
   }
   .banner .content h1 {
     font-size: 12em;
@@ -186,8 +186,8 @@ footer .content {
 }
 @media screen and (max-width: 1023px) {
   header img {
-    height: unset;
-    width: 100%;
+    block-size: unset;
+    inline-size: 100%;
   }
   .banner .content h1 {
     font-size: 7em;
@@ -210,7 +210,7 @@ footer .content {
   .grid-3 {
     font-size: 4em;
     display: block;
-    margin-bottom: 100px;
+    margin-block-end: 100px;
   }
 }
 
